@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Reserva</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastrar Reserva</h1>
+        <nav>
+            <a id="link-home" href="index.html">Home</a>
+            <a id="link-listar" href="listar.html">Listar Vagas</a>
+        </nav>
+    </header>
+    
+    <main>
+        <form id="form-cadastro">
+            <label for="placa">Placa do veículo</label>
+            <input type="text" id="placa" required placeholder="">
+            
+            <label for="nome">Nome do proprietário</label>
+            <input type="text" id="nome" required placeholder="">
+            
+            <label for="apartamento">Número do apartamento</label>
+            <input type="text" id="apartamento" required placeholder="">
+            
+            <label for="bloco">Bloco do apartamento</label>
+            <input type="text" id="bloco" required placeholder="">
+            
+            <label for="modelo">Modelo do veículo</label>
+            <input type="text" id="modelo" required placeholder="">
+            
+            <label for="cor">Cor do veículo</label>
+            <input type="text" id="cor" required placeholder="">
+            
+            <label for="vaga">Número da vaga</label>
+            <input type="number" id="vaga" required placeholder="">
+            
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+
+    <script src="js/vagas.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Vagas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Listar Vagas</h1>
+        <nav>
+            <a id="link-home" href="index.html">Home</a>
+            <a id="link-cadastrar" href="cadastrar.html">Cadastrar Reserva</a>
+        </nav>
+    </header>
+    
+    <main>
+        <table id="lista-vagas">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Proprietário</th>
+                    <th>Apartamento</th>
+                    <th>Bloco</th>
+                    <th>Modelo</th>
+                    <th>Cor</th>
+                    <th>Vaga</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+
+    <script src="js/vagas.js"></script>
+    <script>
+        const vagas = listarVagas(); 
+        const tabela = document.querySelector('#lista-vagas tbody');
+        
+        if (vagas.length === 0) {
+            tabela.innerHTML = '<tr><td colspan="8">Nenhuma vaga cadastrada.</td></tr>';
+        } else {
+            vagas.forEach((vaga, index) => {
+                const row = `
+                    <tr>
+                        <td>${vaga.placa}</td>
+                        <td>${vaga.nome}</td>
+                        <td>${vaga.apartamento}</td>
+                        <td>${vaga.bloco}</td>
+                        <td>${vaga.modelo}</td>
+                        <td>${vaga.cor}</td>
+                        <td>${vaga.vaga}</td>
+                        <td><button onclick="excluirVaga(${index})">Excluir</button></td>
+                    </tr>
+                `;
+                tabela.innerHTML += row;
+            });
+        }
+
+        function excluirVaga(index) {
+            removerVaga(index);
+            location.reload(); 
+        }
+    </script>
+</body>
+</html>
